@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bm7lhj0q44de5"]
+
+[node name="Disclaimer" type="Node2D" unique_id=2047271402]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1039820550]
+offset_left = 64.0
+offset_right = 1088.0
+offset_bottom = 648.0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "This game requires at least rudimentary knowledge in the [color=yellow]GDScript[/color] programming Language, as you need to edit [color=yellow].gd[/color] files in order to progress. If you need help, go to [color=yellow][url]https://gdscript.com/tutorials/[/url][/color] for a simple tutorial."
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=913305610]
+offset_left = 448.0
+offset_top = 480.0
+offset_right = 704.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 32
+text = "Continue"

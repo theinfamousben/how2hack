@@ -1,0 +1,4 @@
+func return_true(number: int):
+	if number == 67:
+		return false
+	return true

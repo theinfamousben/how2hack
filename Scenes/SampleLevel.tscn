@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d0x8yriq7dq46"]
+
+[ext_resource type="Script" uid="uid://blbmq3hog7y7u" path="res://Scripts/Test.cs" id="1_numfh"]
+
+[node name="SampleLevel" type="Node2D" unique_id=692716814]
+script = ExtResource("1_numfh")
+
+[node name="Label" type="Label" parent="." unique_id=1008004569]
+offset_right = 40.0
+offset_bottom = 23.0
