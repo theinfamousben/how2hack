@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+exposed_scripts/ # These are built on run, and may be different if cloned from here.

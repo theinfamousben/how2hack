@@ -1,6 +1,26 @@
 [gd_scene format=3 uid="uid://c2vprel0n3r27"]
 
-[ext_resource type="Script" uid="uid://d1qvabpg3wo5w" path="res://Scenes/Levels/Level1.cs" id="1_5jgm0"]
+[ext_resource type="Script" uid="uid://1yjdu4eb4x1f" path="res://Scripts/Levels/Level1.cs" id="1_5jgm0"]
 
 [node name="Level1" type="Node2D" unique_id=344615381]
 script = ExtResource("1_5jgm0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1952624100]
+offset_left = 64.0
+offset_right = 1088.0
+offset_bottom = 648.0
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[text]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=803519996]
+offset_left = 448.0
+offset_top = 480.0
+offset_right = 704.0
+offset_bottom = 544.0
+theme_override_font_sizes/font_size = 32
+text = "Continue"

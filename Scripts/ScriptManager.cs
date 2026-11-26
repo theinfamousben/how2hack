@@ -17,13 +17,19 @@ public partial class ScriptManager : Node
 	private readonly Dictionary<string, ulong> _mtimes = new();
 	private double _pollTimer;
 
+	private static bool IsEditor() => OS.HasFeature("editor");
+
 	public override void _Ready()
 	{
-		string baseDir = OS.HasFeature("editor")
+		string baseDir = IsEditor()
 			? ProjectSettings.GlobalizePath("res://")
 			: OS.GetExecutablePath().GetBaseDir();
 
-		_scriptsDir = baseDir.PathJoin("scripts");
+		_scriptsDir = baseDir.PathJoin
+			(IsEditor() 
+				? "exposed_scripts" 
+				: "scripts"
+			);
 		DirAccess.MakeDirRecursiveAbsolute(_scriptsDir);
 	}
 
@@ -124,5 +130,12 @@ public partial class ScriptManager : Node
 
 		_instances[scriptName] = dyn.New().AsGodotObject();
 		EmitSignal(SignalName.ScriptReloaded, scriptName, true, $"Reloaded {scriptName}.gd");
+	}
+
+	public void OnScriptReloaded(string scriptName, bool success, string message)
+	{
+		if (success) return;
+
+		GD.PrintErr(message); // todo: refine
 	}
 }
