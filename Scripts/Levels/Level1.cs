@@ -10,7 +10,7 @@ public partial class Level1 : Node2D
 	private ScriptManager scriptManager;
 	private RichTextLabel label;
 	private Button button;
-	private List<string> declinesList = 
+	private readonly List<string> declinesList = 
 		[
 			"I'm not changing my mind.",
 			"You heard me, get out.",
@@ -18,7 +18,7 @@ public partial class Level1 : Node2D
 			"Stop talking to me.",
 			"Close this stupid game."
 		];
-	private Random random = new ();
+	private readonly Random random = new();
 	
 	public override void _Ready()
 	{
@@ -34,7 +34,7 @@ public partial class Level1 : Node2D
 
 	private bool CheckTarget() => (bool)scriptManager.CallRule("level_1", "check", [], false);
 
-	public async void RunScriptedScene()
+	private async void RunScriptedScene()
 	{
 		await TextCycle("Get out.");
 		await TextCycle("I said get out.");
@@ -46,8 +46,8 @@ public partial class Level1 : Node2D
 			await TextCycle(declinesList[random.Next(declinesList.Count)]);
 		}
 
-		await TextCycle("Actually, I really want to do some game action right now!");
-		GetTree().ChangeSceneToFile("");
+		await TextCycle("Ugh, fine. You want a game? I'll show you a game!");
+		GetTree().ChangeSceneToFile("res://Scenes/Levels/Level2.tscn");
 	}
 
 	private async Task TextCycle(string text)
@@ -57,8 +57,8 @@ public partial class Level1 : Node2D
 		await WaitForSeconds(1);
 		
 		label.Show();
-
 		label.Text = text;
+		
 		await WaitForSeconds(1);
 		button.Show();
 

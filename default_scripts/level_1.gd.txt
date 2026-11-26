@@ -1,4 +1,5 @@
 var wants_to_work: bool = false
 
+# Try being more *positive* :D
 func check():
 	return wants_to_work
