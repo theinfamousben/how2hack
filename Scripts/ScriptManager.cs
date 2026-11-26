@@ -78,7 +78,6 @@ public partial class ScriptManager : Node
 			return inst.Callv(method, args ?? new Godot.Collections.Array());
 		}
 
-		GD.Print("fallback");
 		return fallback;
 	}
 

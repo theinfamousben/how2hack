@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bisbxf8b4r2wu"]
 
+[ext_resource type="Theme" uid="uid://ckh13ll0e2pls" path="res://Resources/Themes/MenuButton.tres" id="1_uebgo"]
+[ext_resource type="Script" uid="uid://cliqtcp1wtv0u" path="res://Scripts/TitleScreen.cs" id="1_vmg2h"]
+
 [node name="Control" type="Control" unique_id=990749799]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vmg2h")
+
+[node name="Label" type="Label" parent="." unique_id=92431421]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 48
+text = "How 2 Hack!!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="." unique_id=2093228308]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 336.0
+offset_right = 640.0
+offset_bottom = 384.0
+theme = ExtResource("1_uebgo")
+text = "Start Game"
+
+[node name="QuitGameButton" type="Button" parent="." unique_id=1394912057]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 392.0
+offset_right = 640.0
+offset_bottom = 440.0
+theme = ExtResource("1_uebgo")
+text = "Quit Game"
+
+[connection signal="pressed" from="StartGameButton" to="." method="OnStartGame"]
+[connection signal="pressed" from="QuitGameButton" to="." method="OnQuitGame"]

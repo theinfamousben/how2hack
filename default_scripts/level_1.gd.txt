@@ -1,0 +1,4 @@
+var wants_to_work: bool = false
+
+func check():
+	return wants_to_work
